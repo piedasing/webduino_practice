@@ -1,0 +1,29 @@
+@mixin size($w,$h:$w)
+  width: $w
+  height: $h
+
+@mixin center
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  
+html,body
+  +size(100%)
+  margin: 0
+  padding: 0
+.block
+  +size(250px)
+
+
+#light
+  +size(100%)
+  img 
+    width: 120px
+    display: none
+
+#light.off img:first-child
+  display: inline-block
+
+#light.on img:last-child
+  display: inline-block
